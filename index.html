@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Monks</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="menu">
+        <div class="logoMenu">
+            <img id="logoTextMobile" src="assets/logos/logoText.png" alt="">
+            <button id="btnMenu" onclick=" animar(), menuShow()">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+    <div class="menuMobile" id="menuMobile">
+        <div class="topMenuMobile">
+            <ul class="navMobile">
+                <li><a href="#categoria1">Categoria 1</a></li>
+                <li><a href="#categoria2">Categoria 2</a></li>
+                <li><a href="#categoria3">Categoria 3</a></li>
+                <li><a href="#categoria4">Categoria 4</a></li>
+            </ul>
+        </div>
+        <div class="bottomMenuMobile">
+            <img src="assets/Back.svg" alt="">
+        </div>
+    </div>
     <header class="head">
-        <nav class="menu">
-            <div class="logoMenu">
-                <img src="assets/logos/logoText.png" alt="">
-            </div>
-
-        </nav>
         <div class="headLeft">
             <nav class="headerHead">
                 <img id="imageLogo" src="assets/logos/logoText.png" alt="">
@@ -110,26 +127,35 @@
         <h1>Lorem ipsum dolor sit amet consectetur</h1>  
         <div class="sec4ContainerButtons">
             <div class="sec4Buttons">
-                <button>Perfumaria</button>
-                <button>Corpo e banho</button>
-                <button>Hidratante</button>
-                <button>Desodorante</button>
-                <button>Cabelos</button>
-            </div>
-            <div class="sec4Buttons">
-                <button>Maquiagem</button>
-                <button>Rosto</button>
-                <button>Casa</button>
-                <button>Infantil</button>
-                <button>Shampoo</button>
-                <button>Sabonete</button>
-            </div>
-            <div class="sec4Buttons">
-                <button>Body splash</button>
-                <button>Óleo corporal</button>
-                <button>Corretivo</button>
-                <button>Proteção solar</button>
-            </div>
+                <div class="sec4Tags">
+                    <button>Perfumaria</button>
+                    <button>Corpo e banho</button>
+                </div>
+                <div class="sec4Tags">
+                    <button>Hidratante</button>
+                    <button>Desodorante</button>    
+                </div>
+                <div class="sec4Tags">
+                    <button>Cabelos</button>
+                    <button>Maquiagem</button>
+                </div>
+                <div class="sec4Tags">
+                    <button>Rosto</button>
+                    <button>Casa</button>
+                    <button>Infantil</button>
+                </div>
+                <div class="sec4Tags">
+                    <button>Shampoo</button>
+                    <button>Sabonete</button>
+                </div>
+                <div class="sec4Tags">
+                    <button>Body splash</button>
+                    <button>Óleo corporal</button>
+                </div>
+                <div class="sec4Tags">
+                    <button>Corretivo</button>
+                    <button>Proteção solar</button>
+                </div>
         </div>
     </section>
     <section class="sec5" id="categoria5">
@@ -188,8 +214,8 @@
                         <span class="number" id="num2">628</span>
                     </div>
                     <span class="equals"><img src="assets/math/equals-icon.svg" alt=""></span>
+                    <input type="text" id="result" placeholder="Resultado*">
                 </div>
-                <input type="text" id="result" placeholder="Resultado*">
             </div>
             <button>Lorem ipsum</button>
         </div>
@@ -207,12 +233,19 @@
         <div class="footTexts">
             <h1>Lorem ipsum dolor sit amet</h1>
             <div class="footInfos">
-                <h2>Lorem ipsum</h2>
-                <h2>Lorem ipsum</h2>
-                <h2>Lorem ipsum</h2>
-                <h2>Lorem ipsum</h2>
+                <div class="textFooter">
+                    <h2>Lorem ipsum</h2>
+                    <h2>Lorem ipsum</h2>
+                    <h2>Lorem ipsum</h2>
+                </div>
+                <div class="textFooter">
+                    <h2>Lorem ipsum</h2>
+                </div>
             </div>
         </div>
     </fotter>
+    
+    <script src="script.js"></script>
+
 </body>
 </html>

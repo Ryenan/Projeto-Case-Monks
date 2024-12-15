@@ -47,8 +47,137 @@ img, svg {
   display: none;
 }
 
-.menu{
+.bottomMenuMobile,.menu, .menuMobile{
+  display: none;
+  visibility: hidden;
+}
+
+.logoMenu{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuMobile{
+  display: flex;
+  background-color: #DFBBFE;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
   position: fixed;
+  z-index: 90;
+  height: 476px;
+  width: 100%;
+  transform: translateY(-60vh);
+  text-align: start;
+}
+
+.topMenuMobile{
+  height: 62.53%;
+  width: 100%;
+  padding: 54px 24px 80px 24px;
+  opacity: 0px;
+  gap: 24px;
+}
+
+.navMobile{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'Helvetica neue';
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 23.86px;
+}
+
+.navMobile a{
+  position: relative;
+  padding-left: 20px; 
+  color: #2D2D2D;
+}
+
+.navMobile a::before{
+  content: ""; 
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 8px; 
+  height: 8px;
+  background-color: #2D2D2D; 
+  border-radius: 50%; 
+}
+
+.bottomMenuMobile{
+  height: 37.47%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomMenuMobile img{
+  width: 120%;
+}
+
+.open{
+  transition: all 1s ease-in-out;
+  position: fixed;
+  transform: translateY(3.8vh);
+}
+
+.radiusBottom{
+  border-radius: 0 0 16px 16px;
+}
+
+.menu{
+  width: 100%;
+  height: 48px;
+  position: fixed;
+  padding: 6px 24px 8px 24px;
+  gap: 16px; 
+  background-color: #2D2D2D; 
+  z-index: 100;
+  transition: all ease-in-out 1s;
+  align-items: center;
+}
+
+#btnMenu{
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+}
+
+.logoMenu button.ativaranimacao .hamburger:nth-child(1){
+  transform: translateY(3.8px) rotate(-45deg);
+}
+
+.logoMenu button.ativaranimacao .hamburger:nth-child(3){
+  transform: translateY(-6px) rotate(45deg);
+}
+
+.logoMenu button.ativaranimacao .hamburger:nth-child(2){
+  width: 0;
+  opacity: 0;
+}
+
+.hamburger{
+  width: 18px;
+  height: 1.8px;  
+  background-color: #EAE8E4;
+  display: block;
+  margin: 3.2px auto;
+  position: relative;
+  transform-origin: center;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+#logoTextMobile{
+  width: 50%;
+  object-fit: contain;
 }
 
 .head {
@@ -224,6 +353,8 @@ path {
 }
 
 .cardText {
+  display: flex;
+  flex-direction: column;
   padding: 0 8px;
   gap: 8px;
 }
@@ -425,8 +556,18 @@ path {
   width: 100%;
 }
 
-.sec4Buttons button{
+.sec4Tags{
   display: flex;
+  justify-content: space-between;
+}
+
+.sec4Buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sec4Buttons button{
   height: auto;
   padding: 8px 40px;
   color: #7D26C9;
@@ -555,7 +696,7 @@ path {
 }
 
 .form Button{
-  width: 180px;
+  width: 160px;
   height: 40px;
   padding: 8px 40px 8px 40px;
   border-radius: 4px;
@@ -564,7 +705,7 @@ path {
   margin: 0 auto;
   background-color: #DFBBFE;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   text-align: left;
   color: #8c8b89;
@@ -655,10 +796,7 @@ path {
 
 .formVerify{
   display: flex;
-  width: 803.45px;
-  height: 42px;
-  gap: 32px;
-  justify-content: center;
+  gap: 42px;
   align-items: center;
 }
 
@@ -681,10 +819,9 @@ path {
 }
 
 .sumField{
-  width: 178px;
   height: 42px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0px 24px 0px 24px;
   gap: 16px;
@@ -702,19 +839,18 @@ path {
   color: #7D26C9;
 }
 
-.plus img{
-  width: 14px;
+.plus img,  .equals img{
+  width: 15px;
+  max-width: none;
 }
 
 .equals img{
-  width: 14px;
   height: 8px;
 }
 
 #result{
-  width: 234.45px;
   height: 42px;
-  padding: 6px 10px 6px 10px;
+  padding: 6px 45px 6px 10px;
   border-radius: 8px;
   border: none;
   font-family: 'Helvetica Neue';
@@ -745,7 +881,7 @@ path {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 120px 40px 120px;
+  padding: 0 120px 40px 120px;
   gap: 60px;
   background-color: #2D2D2D;
   margin: 0 auto;
@@ -782,10 +918,13 @@ path {
 }
 
 .footInfos{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
   width: 572px;
   height: 24px;
-  gap: 40px;
   display: flex;
+  gap: 40px;
 }
 
 .footInfos h2{
@@ -800,6 +939,13 @@ path {
   color: #EAE8E4;
 }
 
+.textFooter{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+}
+
 @media (max-width: 1300px) and (min-width: 992px) {
 
   .iconScroll{
@@ -807,7 +953,7 @@ path {
   }
 
   .headerHead a {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .bodyHead h1 {
@@ -1051,6 +1197,14 @@ path {
 
 @media (max-width: 992px){
 
+  .bottomMenuMobile,.menu, .menuMobile{
+    visibility: visible;
+  }
+
+  .menu, .menuMobile{
+    display: flex;
+  }
+
   body{
     overflow-x: hidden; 
     overflow-y: auto;  
@@ -1074,7 +1228,7 @@ path {
     position: absolute;
     width: 100%;
     object-fit: cover;
-    object-position: 18%;
+    object-position: 16%;
   }
 
   .head img{
@@ -1097,7 +1251,7 @@ path {
   }
 
   .bodyHead{
-    height: 240px;
+    height: 220px;
     padding: 0;
     gap: 8px;
   }
@@ -1110,64 +1264,338 @@ path {
     font-size: 16px;
   }
 
+  .iconScroll svg{
+    width: 500px;
+    position: relative;
+    left: 25%;
+    height: auto;
+  }
+
+  .textScroll{
+    font-size: 4px;
+    position: relative;
+    padding-top: 4%;
+    left: 54%;
+  }
+
+  .sec1{  
+    padding: 32px 24px 32px 24px;
+    gap: 24px;
+  }
+
+  .sec1Top{
+    padding: 0;
+  }
+
+  .sec1Top h1{
+    font-family: 'Helvetica Neue';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.15px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .sec1Top h2{
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 18.85px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .sec1Bottom{
+    flex-direction: column;
+  }
+
+  .card{
+    max-width: 100%;
+    padding: 6px 6px 16px 6px;
+    gap: 8px;
+  }
+
+  .card img{
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+  }
+
+  .cardText{
+    padding: 0px 8px 0px 8px;
+  }
+
+  .cardText h1{
+    font-family: 'Helvetica Neue';
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  .cardText h2{
+    font-family: 'Helvetica Neue';
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 24px;
+    text-align: left;
+  }
+
   .sec2{
     flex-direction: column;
     width: 100%;
+    padding: 32px 24px 32px 24px;
   }
 
   .sec2Left{
-    width: 20px;
+    width: 100%;
   }
 
   .sec2Left img{
-    width: 20px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
   }
 
   .sec2Right img{
-    width: 20px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
   }
 
   .sec2LeftTexts{
     width: 100vw;
+    height: auto;
   }
 
-  .sec2LeftTexts h1, .sec2LeftTexts h2{
-    width: 20px;
+  .sec2LeftTexts h1, h2{
+    width: 85%;
+  }
+
+  .sec2LeftTexts h1{
+    font-family: 'Helvetica Neue';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.15px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+  
+  .sec2LeftTexts h2{
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 18.85px;
+    letter-spacing: 0.02em;
+    text-align: left;
   }
 
   .sec3Container{
     flex-direction: column;
+    max-width: 312px;
+    height: 400px;
+  }
+
+  .sec3Texts h1{
+    font-size: 24px;
+  }
+
+  .sec3Texts h2{
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .sec3Buttons{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .Store{
+    position: relative;
+    right: 3%;
+    width: 115%;
+    height: auto;
+    max-width: none;
+  }
+
+  .sec4{
+    width: 100%;
+    height: 550px;
+    padding: 32px 24px 32px 24px;
+  }
+  
+  .sec4 h1{ 
+    font-size: 24px;
   }
 
   .sec4Buttons{
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: auto;
+    gap: 16px;
+  }
+
+  .sec4Tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .sec4Buttons button{
+    padding: 8px 24px 8px 24px;
+    gap: 10px;
+    font-size: 16px;
   }
 
   .sec5{
     flex-direction: column;
+    height: 950px;
   }
 
-  .sec6{
+  .cardSec5{
+    height: 356px;
+  }
+
+  .cardSec5 h1{
+    font-size: 20px;
+  }
+
+  .cardSec5 h2{
+    font-size: 16px;
+  }
+
+  .cardSec5Button button{
+    padding: 8px 40px 8px 40px;
+    font-size: 16px;
+  }
+
+  .sec6 {
+    height: auto;
     flex-direction: column;
+    gap: 24px;
+    padding: 32px;
   }
 
-  .form{
-    width: 20px;
+  .sec6 img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .form {
+    width: 100%;
+    height: 610px;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .formTexts, .formVerify, .formInputs{
+    width: 100%;
+  }
+
+  .formTexts h1 {
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+  }
+
+  .formTexts h2, .formTexts h3 {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+  }
+
+  .inputs {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .inputs input {
+    width: 100%;
+    height: 42px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  .calculate{
+    width: 100%;
+    gap: 16px;
+  }
+
+  .formInputs{
+    position: relative;
+    margin-top: 50px;
+    display: flex;
     flex-direction: column;
+    gap: 20px;
+    margin-bottom: 60px;
   }
 
-  .formInputs, .formTexts, .formVerify{
-    width: 20px;
-    height: 20px;
+  .formVerify {
+    padding-top: 55px;
     flex-direction: column;
+    gap: 12px;
   }
 
-  .footTexts h1, .formTexts h1{
-    width: 20px;
-    font-size: 24px;
+  .formVerify h1 {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .number{
+    font-size: 16px;
+  }
+
+  .sumField {
+    width: 60%;
+    padding: 0 12px;
+  }
+
+  .plus img,  .equals img{
+    width: 15px;
+    max-width: none;
+  }
+
+  #result {
+    width: 45%;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .form Button {
+    width: 100%;
+    max-width: 200px;
+    height: 36px;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    top: 50px;
+  }
+
+  .foot{
+    height: 226px;
+    gap: 80px;
+    justify-content: start;
+    padding: 16px;
+    padding-top: 24px;
   }
 
   .footInfos{
     flex-direction: column;
+    width: auto;
+    height: auto;
+    gap: 12px;
   }
+
+  .textFooter{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+
 }
