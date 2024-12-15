@@ -517,6 +517,16 @@ path {
   border-radius: 8px;
 }
 
+.sec4DesktopVersion{
+  display: flex;
+  visibility: visible;
+}
+
+.sec4MobileVersion{
+  display: none;
+  visibility: none;
+}
+
 .sec4{
   display: flex;
   flex-direction: column;
@@ -546,7 +556,7 @@ path {
   justify-content: center;
   width: 100%;
   height: auto;
-  gap: 40px;
+  gap: 24px;
 }
 
 .sec4Buttons{
@@ -558,13 +568,17 @@ path {
 
 .sec4Tags{
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: center;
 }
 
 .sec4Buttons{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  width: 100%;
 }
 
 .sec4Buttons button{
@@ -582,7 +596,6 @@ path {
   text-decoration-skip-ink: none;
   backdrop-filter: blur(16px);
 }
-
 
 .sec5{
   display: flex;
@@ -1420,9 +1433,19 @@ path {
     max-width: none;
   }
 
+  .sec4DesktopVersion{
+    display: none;
+    visibility: hidden;
+  }
+
+  .sec4MobileVersion{
+    display: flex;
+    visibility: visible;
+  }
+
   .sec4{
     width: 100%;
-    height: 550px;
+    height: 530px;
     padding: 32px 24px 32px 24px;
   }
   
