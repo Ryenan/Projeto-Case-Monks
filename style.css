@@ -257,7 +257,7 @@ img, svg {
 .headerHead a:hover {
   font-weight: bold;
   transform: translateY(4px) scale(1.05);
-  animation: impactAnchor 0.4s ease-out forwards;
+  animation: impactAnchor 0.4s ease-in-out forwards;
 }
 
 .headerHead a:hover::before {
@@ -266,22 +266,30 @@ img, svg {
   font-size: 18px;
   position: absolute;
   left: -15%;
-  top: 0%;
+  top: 25%;
   transform-origin: center;
-  animation: impactEffect 0.4s ease-out forwards;
+  transform: translateY(-50%) scale(1.5);
+  animation: impactEffect 0.4s ease-in-out forwards;
+  max-height: 100%; 
+  overflow: hidden;
 }
 
-@keyframes impactAnchor {
+@keyframes impactEffect {
   0% {
-    transform: translateY(0);
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(0.5) translateY(-15px);
   }
-  50% {
-    transform: translateY(6px) scale(1.05);
+  40% {
+    opacity: 1;
+    transform: scale(1.5) translateY(5px);
   }
   100% {
-    transform: translateY(0);
+    transform-origin: center;
+    transform: scale(1) translateY(-4px);
   }
 }
+
 
 @keyframes impactAnchor {
   0% {
