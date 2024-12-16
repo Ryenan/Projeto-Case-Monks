@@ -249,20 +249,50 @@ img, svg {
   text-align: center;
   color: #EAE8E4;
   position: relative;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  display: inline-block;
+  transform-origin: center;
 }
 
 .headerHead a:hover {
   font-weight: bold;
+  transform: translateY(4px) scale(1.05);
+  animation: impactAnchor 0.4s ease-out forwards;
 }
 
 .headerHead a:hover::before {
-  content: "•"; 
-  color: #fff; 
+  content: "•";
+  color: #fff;
   font-size: 18px;
   position: absolute;
   left: -15%;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0%;
+  transform-origin: center;
+  animation: impactEffect 0.4s ease-out forwards;
+}
+
+@keyframes impactAnchor {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes impactAnchor {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(8px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .bodyHead {
