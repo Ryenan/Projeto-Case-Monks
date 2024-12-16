@@ -62,8 +62,6 @@ document.getElementById('logoTextMobile').addEventListener('click', redirectToMo
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // var voltarParaTop = document.getElementById("voltarparaotop");
-
     var sec1 = document.querySelector(".sec1");
     var sec2 = document.querySelector(".sec2");
     var sec3 = document.querySelector(".sec3");
@@ -78,12 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
         
         var alturaPagina = document.documentElement.scrollHeight - window.innerHeight;
         var porcentagemRolagem = (window.scrollY / alturaPagina) * 100;
-        
-        // if (porcentagemRolagem > 35) { 
-        //     voltarparaotop.classList.add("show");
-        // } else {
-        //     voltarparaotop.classList.remove("show");
-        // }
         
         if (porcentagemRolagem > 8) {
             sec2.classList.add("show");
@@ -117,12 +109,4 @@ document.addEventListener("DOMContentLoaded", function() {
             sec6img.classList.remove("show");      
         }
     })
-
-    // voltarparaotop.addEventListener("click", function() {
-    //     window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth" 
-    //     });
-    // });
-
 });
