@@ -1,6 +1,26 @@
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap');
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url(assets/fonts/HelveticaNeue-Medium.otf) format('opentype');
+  font-weight: '200';
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url(assets/fonts/HelveticaNeue-Thin.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url(assets/fonts/HelveticaNeue-Bold.otf) format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -87,7 +107,7 @@ img, svg {
   gap: 24px;
   font-family: 'Helvetica neue';
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 23.86px;
 }
 
@@ -180,6 +200,10 @@ img, svg {
   object-fit: contain;
 }
 
+#imageLogo{
+  cursor: pointer;
+}
+
 .head {
   display: flex;
   flex-direction: row;
@@ -213,6 +237,7 @@ img, svg {
 .headerHead {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 48px;
 }
 
@@ -222,14 +247,22 @@ img, svg {
   font-weight: 200;
   line-height: 1.5;
   text-align: center;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
   color: #EAE8E4;
+  position: relative;
 }
 
 .headerHead a:hover {
-  scale: 1.5; 
-  text-decoration: underline white;
+  font-weight: bold;
+}
+
+.headerHead a:hover::before {
+  content: "•"; 
+  color: #fff; 
+  font-size: 18px;
+  position: absolute;
+  left: -15%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .bodyHead {
@@ -245,7 +278,7 @@ img, svg {
 .bodyHead h1 {
   font-family: 'Helvetica Neue';
   font-size: 48px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #EAE8E4;
@@ -260,21 +293,14 @@ img, svg {
   color: #EAE8E4;
 }
 
-.iconScroll {
+.iconScroll{
   display: flex;
-  font-family: 'Rock Salt', cursive;
-  position: relative;
-  right: 5%;
-  top: 7%;
+  justify-content: center;
+  padding-top: 3%;
 }
 
-.textScroll {
-  left: 52%;
-  width: 100%; 
-  color: white;
-  padding-top: 2.5%;
-  position: relative;
-  font-size: 10px;
+.iconScroll img {
+  width: 10%;
 }
 
 path {
@@ -297,6 +323,14 @@ path {
   padding: 64px 20px 32px;
   gap: 40px;
   margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+.sec1.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sec1Top {
@@ -313,7 +347,7 @@ path {
   font-family: 'Helvetica Neue';
   color: #2D2D2D;
   font-size: 40px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.2;
   text-align: left;
 }
@@ -344,6 +378,11 @@ path {
   border-radius: 8px;
   background: var(--Background-card, #FCFCFD);
   box-shadow: 0px 2px 24px 0px #0000001A;
+  transition: all ease-in-out 0.2s;
+}
+
+.card:hover {
+  scale: 1.1;
 }
 
 .cardImg {
@@ -362,7 +401,7 @@ path {
 .cardText h1 {
   font-family: 'Helvetica Neue';
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.5;
   text-align: left;
   color: #0C111D;
@@ -386,6 +425,14 @@ path {
   gap: 24px;
   margin: 0 auto;
   justify-content: space-around;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.sec2.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sec2Left, .sec2Right {
@@ -429,7 +476,7 @@ path {
 .sec2LeftTexts h1{
   font-family: 'Helvetica Neue';
   font-size: 40px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.2;
   color: #2D2D2D;
 }
@@ -456,6 +503,14 @@ path {
   max-width: 1366px;
   padding: 32px 20px;
   margin: 0 auto;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.sec3.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sec3Container {
@@ -479,7 +534,7 @@ path {
 .sec3Texts h1, .sec3Texts h2 {
   font-family: 'Helvetica Neue';
   font-size: 40px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.2;
   color: #EAE8E4;
 }
@@ -534,14 +589,22 @@ path {
   max-width: 1366px;
   height: auto;
   padding: 32px 80px;
-  gap: 4vw;
+  gap: 40px;
   margin: 0 auto;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.sec4.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sec4 h1{
   font-family: 'Helvetica Neue';
   font-size: 40px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.2;
   letter-spacing: 0.02em;
   text-align: left;
@@ -595,6 +658,12 @@ path {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.sec4Buttons button:hover{
+  scale: 1.1;
 }
 
 .sec5{
@@ -606,10 +675,18 @@ path {
   height: 372px;
   padding: 32px 80px 64px 80px;
   gap: 40px;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.sec5.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .cardSec5{
-  width: 375.33px;
+  max-width: 90vw;
   height: 276px;
   padding: 24px;
   gap: 24px;
@@ -618,10 +695,16 @@ path {
   background-color: #FFFFFF;
   border: 2px solid #DFBBFE;
   box-shadow: 0px 2px 24px 0px #0000001A;
+  transition: all ease-in-out 0.2s;
+}
+
+.cardSec5:hover{
+  scale: 1.1;
 }
 
 .cardSec5Text{
   height: 164px;
+  max-width: 85vw;
   display: flex; 
   flex-direction: column; 
   gap: 8px;
@@ -630,9 +713,10 @@ path {
 .cardSec5 h1{
   width: 327.33px;
   height: 36px;
+  max-width: 80vw;
   font-family: 'Helvetica Neue';
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 36px;
   text-align: left;
   text-underline-position: from-font;
@@ -642,6 +726,7 @@ path {
 .cardSec5 p{
   width: 327.33px;
   height: 120px;
+  max-width: 80vw;
   gap: 10px;
   font-family: 'Helvetica Neue';
   font-size: 20px;
@@ -692,9 +777,17 @@ path {
   margin: 0 auto;
 }
 
-.sec6 img{
+.sec6Img{
   width: 314.55px;
   height: 300.87px;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.sec6Img.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .form{
@@ -706,6 +799,14 @@ path {
   padding: 24px;
   gap: 32px;
   border-radius: 24px;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.form.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .form Button{
@@ -723,6 +824,11 @@ path {
   text-align: left;
   color: #8c8b89;
   transition: all ease-in-out 0.2s;
+  cursor: not-allowed;
+}
+
+.form Button.enabled{
+  color: #2D2D2D;
   cursor: pointer;
 }
 
@@ -742,7 +848,7 @@ path {
 .formTexts h1{
   font-family: 'Helvetica Neue';
   font-size: 40px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 46.92px;
   letter-spacing: 0.02em;
   text-align: left;
@@ -809,14 +915,14 @@ path {
 
 .formVerify{
   display: flex;
-  gap: 42px;
+  gap: 4%;
   align-items: center;
 }
 
 .formVerify h1{
   font-family: 'Helvetica Neue';
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 36px;
   text-align: left;
   text-decoration-skip-ink: none;
@@ -845,7 +951,7 @@ path {
 .number{
   font-family: 'Helvetica Neue';
   font-size: 20px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 23.86px;
   text-align: left;
   text-decoration-skip-ink: none;
@@ -863,7 +969,7 @@ path {
 
 #result{
   height: 42px;
-  padding: 6px 45px 6px 10px;
+  padding: 6px 10px 6px 10px;
   border-radius: 8px;
   border: none;
   font-family: 'Helvetica Neue';
@@ -907,6 +1013,15 @@ path {
   gap: 40px;
 }
 
+.socialMedias img{
+  transition: all ease-in-out 0.2s;
+}
+
+.socialMedias img:hover{
+  scale: 1.2;
+  cursor: pointer;
+}
+
 .footTexts{
   width: 231px;
   height: 32px;
@@ -923,7 +1038,7 @@ path {
   height: 36px;
   font-family: 'Helvetica Neue';
   font-size: 20px;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 36px;
   text-align: center;
   text-decoration-skip-ink: none;
@@ -961,9 +1076,6 @@ path {
 
 @media (max-width: 1300px) and (min-width: 992px) {
 
-  .iconScroll{
-    display: none;
-  }
 
   .headerHead a {
     font-size: 14px;
@@ -1119,7 +1231,7 @@ path {
 
   .sec6 img {
     width: 40%;
-    height: 40%;
+    height: 60%;
   }
 
   .form {
@@ -1128,19 +1240,22 @@ path {
   }
 
   .form Button {
-    font-size: 14px;  
+    font-size: 12px;  
     text-align: center;
   }
 
   .formVerify{
     width: auto;
-    gap: 0;
+    gap: 12px;
   }
 
   .formVerify h1{
-    font-size: 17px;
-    width: 300px;
-    max-width: 400px;
+    font-size: 16px;
+  }
+
+  .calculate{
+    width: 20px;
+    gap: 12px;
   }
 
   .formTexts{
@@ -1189,6 +1304,8 @@ path {
 
   #result{
     font-size: 16px;
+    max-width: 140px;
+    padding: 6px 10px 6px 10px;
   }
 
   .foot {
@@ -1244,9 +1361,9 @@ path {
     object-position: 16%;
   }
 
-  .head img{
-    width: 100%;
-    height: 100%;
+  .iconScroll img{
+    padding-top: 10vh;
+    width: 20%;
   }
 
   .headLeft{
@@ -1264,24 +1381,16 @@ path {
   }
 
   .bodyHead{
-    height: 220px;
-    padding: 0;
-    gap: 8px;
+    height: 140px;
+    padding: 16px 0px 24px 0px;
   }
 
   .bodyHead h1{
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .bodyHead p{
-    font-size: 16px;
-  }
-
-  .iconScroll svg{
-    width: 500px;
-    position: relative;
-    left: 25%;
-    height: auto;
+    font-size: 14px;
   }
 
   .textScroll{
@@ -1303,7 +1412,7 @@ path {
   .sec1Top h1{
     font-family: 'Helvetica Neue';
     font-size: 24px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 28.15px;
     letter-spacing: 0.02em;
     text-align: left;
@@ -1341,7 +1450,7 @@ path {
   .cardText h1{
     font-family: 'Helvetica Neue';
     font-size: 22px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 30px;
     text-align: left;
   }
@@ -1388,7 +1497,7 @@ path {
   .sec2LeftTexts h1{
     font-family: 'Helvetica Neue';
     font-size: 24px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 28.15px;
     letter-spacing: 0.02em;
     text-align: left;
@@ -1406,7 +1515,7 @@ path {
   .sec3Container{
     flex-direction: column;
     max-width: 312px;
-    height: 400px;
+    height: bold;
   }
 
   .sec3Texts h1{
@@ -1470,7 +1579,6 @@ path {
 
   .sec4Buttons button{
     padding: 8px 24px 8px 24px;
-    gap: 10px;
     font-size: 16px;
   }
 
@@ -1484,10 +1592,10 @@ path {
   }
 
   .cardSec5 h1{
-    font-size: 20px;
+    font-size: 18px;
   }
 
-  .cardSec5 h2{
+  .cardSec5 p{
     font-size: 16px;
   }
 
@@ -1511,9 +1619,9 @@ path {
 
   .form {
     width: 100%;
-    height: 610px;
+    height: 680px;
     padding: 24px;
-    gap: 24px;
+    gap: 45px;
   }
 
   .formTexts, .formVerify, .formInputs{
@@ -1527,7 +1635,7 @@ path {
   }
 
   .formTexts h2, .formTexts h3 {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 20px;
     width: 100%;
   }
@@ -1559,14 +1667,13 @@ path {
   }
 
   .formVerify {
-    padding-top: 55px;
     flex-direction: column;
     gap: 12px;
   }
 
   .formVerify h1 {
     width: 100%;
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .number{
@@ -1596,7 +1703,6 @@ path {
     font-size: 14px;
     position: relative;
     text-align: center;
-    top: 50px;
   }
 
   .foot{
@@ -1614,8 +1720,14 @@ path {
     gap: 12px;
   }
 
+  .footInfos h2{
+    font-size: 16px;
+    text-align: center;
+  }
+
   .textFooter{
-    width: 100%;
+    gap: 12px;
+    max-width: 92vw;
     display: flex;
     text-align: center;
     justify-content: center;
