@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(){
+    alert('Esta página não possui nenhuma finalidade comercial, é apenas um case feito para um processo seletivo.')
+})
+
 const num1 = document.getElementById('num1');
 const num2 = document.getElementById('num2');
 
